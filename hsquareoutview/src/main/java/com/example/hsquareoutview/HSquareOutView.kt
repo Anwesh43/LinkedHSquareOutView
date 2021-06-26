@@ -44,7 +44,7 @@ fun Canvas.drawHSquareOut(scale : Float, w : Float, h : Float, paint : Paint) {
     for (j in 0..1) {
         save()
         scale(1f - 2 * j, 1f)
-        translate(-uSize, 0f)
+        translate(-uSize1, 0f)
         drawLine(0f, -uSize / 2, 0f, uSize / 2, paint)
         restore()
         save()
