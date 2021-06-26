@@ -222,4 +222,13 @@ class HSquareOutView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : HSquareOutView {
+            val view : HSquareOutView = HSquareOutView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
