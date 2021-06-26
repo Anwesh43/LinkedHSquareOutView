@@ -1,0 +1,3 @@
+include ':hsquareoutview'
+include ':app'
+rootProject.name = "LiinkedHSquareOutView"
