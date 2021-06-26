@@ -197,4 +197,27 @@ class HSquareOutView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : HSquareOutView) {
+
+        private var hos : HSquareOut = HSquareOut(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas, paint : Paint) {
+            canvas.drawColor(backColor)
+            hos.draw(canvas, paint)
+            animator.animate {
+                hos.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            hos.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
